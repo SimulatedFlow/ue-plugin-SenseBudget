@@ -1,0 +1,27 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0.0",
+	"EngineVersion": "5.8.0",
+	"FriendlyName": "SenseBudget - A Budget For AI Perception Updates",
+	"Description": "SenseBudget does not replace the engine's AIPerception and brings no senses of its own - it paces what is already there. AIPerception gives every sense its own update rate, but there is no shared ceiling across all perceivers: a hundred guards with sight and hearing means a hundred listeners asking the sight sense for traces in the same frame, whether the player is nearby or not. SenseBudget puts a hard ceiling on how many perception updates are issued per frame - 12 by default - and spreads the rest over a rotation. Whoever does not get a turn is not switched off, they move up the queue and go next: nobody drops out, everybody slows down, and whoever is close and important does not slow down at all. The order is not round-robin. Perceivers are ranked by distance to the nearest viewer, whether they were recently rendered, an importance value from their profile, and how long they have been waiting - that last term is what stops anybody starving, because a perceiver that has not had a turn keeps climbing until it gets one. Three tiers replace on/off: Live looks every frame, Slow looks at the profile's rate (0.5 s by default), Parked looks only rarely and on events. Parked is not blind - a shot next to a parked guard pulls it straight back to Live, otherwise this would just be switching perception off with a nicer name, and the guard would walk into a room without having seen anybody coming. Every profile also carries a floor rate that no tier ever undercuts, so even a parked perceiver looks at least once every few seconds. The numbers are drawn on a UCanvas counter box that survives a cooked Shipping build: perceivers, updates this frame against the budget, the live/slow/parked split, the longest wait in seconds against the starvation limit, the measured milliseconds the scheduler spent, and a list of the five perceivers that have waited longest. Console commands Sense.Show, Sense.Budget, Sense.Stats, Sense.Tiers, Sense.Stress and Sense.Freeze. The ranking, the tier assignment, the wake rule and the next-due rule are all static functions with no world, so they are unit tested and callable from Blueprint. One runtime module, no UMG, no editor module.",
+	"Category": "Artificial Intelligence",
+	"CreatedBy": "Silvan Teufel",
+	"CreatedByURL": "https://silvan.teufel-engineering.com",
+	"DocsURL": "https://wiki.teufel-engineering.com/en/SenseBudget/documentation",
+	"SupportURL": "mailto:teufelsilvan@gmail.com",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "SenseBudget",
+			"Type": "Runtime",
+			"LoadingPhase": "PreDefault",
+			"PlatformAllowList": [
+				"Win64"
+			]
+		}
+	]
+}

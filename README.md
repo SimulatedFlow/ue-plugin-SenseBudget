@@ -81,9 +81,8 @@ Unreal Engine 5.8, Win64. One runtime module. Depends on `AIModule`, `GameplayTa
 This repository contains the **full source** of a commercial Unreal Engine plugin. It is **source-available, not open source**: read it, evaluate it, then buy a license to use it. See **the Fab Content License Agreement / Unreal Engine EULA (purchase required)**.
 
 **Get it / Buy:**
+- **Buy on Fab** (this plugin): https://www.fab.com/listings/dedfab66-a60a-4e5d-93b2-4b81e180ccdf
 - Fab store — all our UE5 plugins: https://www.fab.com/sellers/Silvan%20Teufel
-
-_This plugin does not have its own Fab listing yet — the store link above is where everything we currently sell lives._
 
 ### 📬 **Free UE5 Snippet-Pack**
 
